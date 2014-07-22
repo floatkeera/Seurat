@@ -1,13 +1,28 @@
 PImage img;
 
+int sizea = 30;
+int sizeb = 30;
+
 void setup() {
-  background(255);
+  background(0);
   size(877, 1085);
   img = loadImage("mario.png");
 }
 
 void draw()
 {
+  
+  if (keyPressed && key == 'd'){ 
+    sizea = sizea+1;
+    sizeb = sizeb+1;
+    background(0);
+  }
+  else if (keyPressed && key== 's'){
+    sizea = sizea-1;
+    sizeb = sizeb-1;
+    background(0);
+  }
+  
   int randomx = (int)random(0, 877);
   int randomy = (int)random(0, 1085);
 
@@ -15,7 +30,7 @@ void draw()
 
   fill(c);
   noStroke();
-  ellipse(randomx,randomy,30,30); 
+  ellipse(randomx,randomy,sizea,sizeb); 
 
 
   int random1x = (int)random(0, 877);
@@ -25,7 +40,7 @@ void draw()
 
   fill(d);
   noStroke();
-  ellipse(random1x,random1y,30,30); 
+  ellipse(random1x,random1y,sizea,sizeb); 
   
   int random2x = (int)random(0, 877);
   int random2y = (int)random(0, 1085);
@@ -34,5 +49,5 @@ void draw()
 
   fill(e);
   noStroke();
-  ellipse(random2x,random2y,30,30); 
+  ellipse(random2x,random2y,sizea,sizeb); 
 }
